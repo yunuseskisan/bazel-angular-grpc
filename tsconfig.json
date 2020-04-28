@@ -19,5 +19,14 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
+  },
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "project/*": [
+        "*", // Enables absolute paths for src files in your project
+        "bazel-bin/*" // Enables referencing generate protos with absolute paths
+      ]
+    }
   }
 }

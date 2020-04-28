@@ -1,0 +1,19 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@npm_bazel_labs//:index.bzl", "ts_proto_library")
+
+
+proto_library(
+    name = "hello_proto",
+    srcs = [
+        "hello.proto",
+    ],
+    deps =  [
+        "@com_google_protobuf//:timestamp_proto",
+    ]
+)
+
+ts_proto_library(
+    name = "hello",
+    proto = ":hello_proto",
+)
